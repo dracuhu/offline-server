@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Monster Mind — Instagram Inbox</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<aside class="sidebar">
+  <div class="brand"><div class="avatar">👾</div><h2>MONSTER MIND</h2><small>Instagram Inbox Assistant</small></div>
+  <nav><a class="active">⌂　 Dashboard</a><a href="#thread">✉　 Thread Reply</a><a href="#help">ⓘ　 About</a></nav>
+  <div class="status"><i></i><span><b>Secure session</b><br>Ready to connect</span></div>
+  <footer>v1.0.0<br>Made with ❤️</footer>
+</aside>
+<main>
+<header><div class="insta">◎</div><div><h1>MONSTER MIND</h1><p>Instagram Messaging • Powered by Meta Graph API</p></div><span class="pill"><i></i> API Server</span></header>
+<section class="topstats">
+ <div class="connected"><span class="check">✓</span><div><b>Instagram Messaging</b><small>Connect your Meta credentials in Render environment variables</small></div></div>
+ <div class="stat"><small>Messages sent this session</small><strong id="sent">0</strong></div><div class="stat"><small>Successful replies</small><strong class="green" id="success">0</strong></div><div class="stat"><small>Session time</small><strong id="clock">00:00:00</strong></div>
+</section>
+<div class="layout">
+<section class="panel" id="thread">
+ <h2>➤　Thread Reply & Settings</h2>
+ <div class="field"><label>Instagram Conversation / Thread ID</label><div class="inline"><input id="threadId" placeholder="Paste conversation ID from Meta API"><button class="secondary" id="load">Load thread</button></div><small>Use an existing conversation ID returned by Meta's Conversations API.</small></div>
+ <div class="threadbox" id="threadInfo"><div class="empty">No thread loaded yet. Enter a conversation ID above.</div></div>
+ <div class="field"><label>Message</label><textarea id="message" maxlength="1000" placeholder="Write your reply…"></textarea><div class="under"><small>Replies are sent to the participant in the loaded thread.</small><small id="count">0 / 1000</small></div></div>
+ <div class="field"><label>Reply to message ID <span class="optional">(optional)</span></label><input id="replyToId" placeholder="Optional message ID (mid) to reply to a specific message"></div>
+ <div class="notice">🔒 <b>Policy-safe sending:</b> This tool replies only inside an existing Instagram conversation. It does not scrape followers or send unsolicited bulk DMs. Meta's messaging window and permissions still apply.</div>
+ <button class="send" id="send" disabled>➤　 Send Reply</button><div id="result" role="status"></div>
+</section>
+<section class="rightcol">
+ <div class="panel"><h2>▥　 Session Statistics</h2><div class="tiles"><div class="tile"><span>➤</span><div><small>Messages sent</small><b id="sent2">0</b></div></div><div class="tile"><span class="green">✓</span><div><small>Success</small><b class="green" id="success2">0</b></div></div><div class="tile"><span class="red">×</span><div><small>Failed</small><b id="failed">0</b></div></div><div class="tile"><span>◷</span><div><small>Last action</small><b id="last">—</b></div></div></div><div class="activity"><b><i></i> Live Activity</b><p id="activity">Waiting for a thread to be loaded…</p></div></div>
+ <div class="panel" id="help"><h2>ⓘ　 Setup Checklist</h2><ol><li>Create a Meta app and enable Instagram Messaging.</li><li>Use an Instagram Professional account and configure the required permissions.</li><li>Add a Page access token and Instagram Professional Account ID to Render environment variables.</li><li>Deploy this repository and open your Render URL.</li></ol><p class="muted">Never paste access tokens into this page or commit them to GitHub.</p></div>
+</section>
+</div>
+<div class="bottom">SAFE & SECURE　•　Official Meta API　•　<em>Automate responsibly</em></div>
+</main>
+<script src="/app.js"></script>
+</body></html>

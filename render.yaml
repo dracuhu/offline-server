@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: monster-mind-instagram
+    runtime: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /health
+    envVars:
+      - key: NODE_VERSION
+        value: 20
+      - key: GRAPH_API_VERSION
+        value: v27.0
+      - key: META_PAGE_ACCESS_TOKEN
+        sync: false
+      - key: INSTAGRAM_ACCOUNT_ID
+        sync: false
+      - key: DASHBOARD_PASSWORD
+        sync: false
